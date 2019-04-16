@@ -62,7 +62,7 @@ function createSendMessage(data, message, actions, attachments, responseURL) {
 exports.createSendMessage = createSendMessage;
 function parseWebHookEvent(event) {
     const req = event.request;
-    const payloadStr = R.path(['body', 'payload'], req);
+    const payloadStr = R.path(['body'], req);
     if (R.isEmpty(payloadStr)) {
         return Promise.resolve(null);
     }

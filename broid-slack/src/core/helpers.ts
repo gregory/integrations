@@ -75,7 +75,7 @@ export function createSendMessage(data: any,
 export function parseWebHookEvent(event: IWebHookEvent): any {
   const req = event.request;
 
-  const payloadStr: string = R.path(['body', 'payload'], req) as string;
+  const payloadStr: string = R.path(['body'], req) as string;
   if (R.isEmpty(payloadStr)) {
     return Promise.resolve(null);
   }
